@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Main",  // This is just a label for this configuration
+            "request": "launch",
+            "mainClass": "Main",    // Name of the main class in your project
+            "classPaths": [
+                "lib/jogl-all.jar",
+                "lib/gluegen-rt.jar",
+                "src"               // This points to your source files folder
+            ]
+        }
+    ]
+}

@@ -1,14 +1,20 @@
-import com.jogamp.opengl.*;
-import com.jogamp.opengl.util.texture.*;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.util.texture.Texture;
+import com.jogamp.opengl.util.texture.TextureIO;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Textures {
-    public static int loadTexture(GL2 gl, String fileName) {
-        Texture texture = null;
+    public static int loadTexture(GL2 gl, String filePath) {
         try {
-            texture = TextureIO.newTexture(new java.io.File(fileName), true);
-        } catch (Exception e) {
+            Texture texture = TextureIO.newTexture(new File(filePath), true);
+            System.out.println("Loaded texture from " + filePath);
+            return texture.getTextureObject(gl);
+        } catch (IOException e) {
+            System.err.println("Error loading texture: " + filePath);
             e.printStackTrace();
+            return -1;
         }
-        return texture != null ? texture.getTextureObject(gl) : -1;
     }
 }

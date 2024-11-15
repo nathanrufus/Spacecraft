@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.spacecraft.Main",  // Fully qualified name of the main class
+            "classPaths": [
+                "lib/jogl-all.jar",
+                "lib/gluegen-rt.jar",
+                "target/classes"  // Use 'target/classes' instead of 'src' for compiled classes
+            ]
+        }
+    ]
+}
